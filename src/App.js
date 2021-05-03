@@ -1,6 +1,6 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import SelectApp from "./components/Form/SelectApp"
+import FontApp from "./components/FontApp"
 
 function App() {
 	return (
@@ -10,8 +10,8 @@ function App() {
 			</header>
 			<div className="container min-vh-100">
 				<div className="row my-5">
-					<div style={{ position: "sticky", top: "0px" }}>
-						<SelectApp />
+					<div>
+						<FontApp />
 					</div>
 				</div>
 			</div>

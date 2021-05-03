@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 const ListApp = () => {
-	const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBFv26wh62iDoGPOxIZgAVKttXZ6GgINfI`
+	const url = `https://webfonts.googleapis.com/v1/webfonts?sort=popularity&key=AIzaSyBFv26wh62iDoGPOxIZgAVKttXZ6GgINfI`
 	const [data, setData] = useState([])
 	const [error, setError] = useState("")
 	const [loading, setLoading] = useState(false)
@@ -18,8 +18,8 @@ const ListApp = () => {
 				return response.json()
 			})
 			.then((data) => {
+				setData(() => data.items.slice(0, 10))
 				console.log(data)
-				setData(data)
 			})
 			.catch((error) => {
 				setError(error.message)
@@ -32,7 +32,11 @@ const ListApp = () => {
 	return (
 		<div>
 			{data.map((el) => {
-				return <p>{el.kind}</p>
+				return (
+					<article key={el}>
+						<p>{el.family}</p>
+					</article>
+				)
 			})}
 		</div>
 	)
