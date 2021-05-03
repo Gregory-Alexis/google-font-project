@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import SelectApp from "./components/Form/SelectApp"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<header>
+				<Header />
+			</header>
+			<div className="container min-vh-100">
+				<div className="row my-5">
+					<div style={{ position: "sticky", top: "0px" }}>
+						<SelectApp />
+					</div>
+				</div>
+			</div>
+			<footer>
+				<Footer />
+			</footer>
+		</>
+	)
 }
 
-export default App;
+export default App
