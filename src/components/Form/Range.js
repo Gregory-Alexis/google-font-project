@@ -1,6 +1,8 @@
-import React from "react"
+const Range = ({ range, setRange }) => {
+	const handleChange = (e) => {
+		setRange(e.target.value)
+	}
 
-const Range = () => {
 	return (
 		<div className="mb-3">
 			<label className="fw-bold mb-3 form-label" htmlFor="range">
@@ -13,8 +15,9 @@ const Range = () => {
 				min="8"
 				max="48"
 				step="1"
-				value="24"
-			></input>
+				value={range}
+				onChange={handleChange}
+			/>
 		</div>
 	)
 }

@@ -1,9 +1,13 @@
-const Footer = () => {
+const Footer = ({ darkMode }) => {
 	return (
-		<footer>
-			<div className="text-center bg-dark text-white p-3 pb-1 ">
-				<p>With Love & React for Alyra</p>
-			</div>
+		<footer
+			className={
+				darkMode
+					? "text-center bg-warning text-dark p-3 pb-1"
+					: "text-center bg-dark text-white p-3 pb-1 "
+			}
+		>
+			<p>With Love & React for Alyra</p>
 		</footer>
 	)
 }

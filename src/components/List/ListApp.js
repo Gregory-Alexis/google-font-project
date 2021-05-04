@@ -1,43 +1,36 @@
-import React, { useEffect, useState } from "react"
+import Card from "./Card"
 
-const ListApp = () => {
-	const url = `https://webfonts.googleapis.com/v1/webfonts?sort=popularity&key=AIzaSyBFv26wh62iDoGPOxIZgAVKttXZ6GgINfI`
-	const [data, setData] = useState([])
-	const [error, setError] = useState("")
-	const [loading, setLoading] = useState(false)
-
-	useEffect(() => {
-		setLoading(true)
-
-		fetch(url)
-			.then((response) => {
-				console.log(response)
-				if (!response.ok) {
-					throw new Error(`Invalid url ${response.status}`)
-				}
-				return response.json()
-			})
-			.then((data) => {
-				setData(() => data.items.slice(0, 10))
-				console.log(data)
-			})
-			.catch((error) => {
-				setError(error.message)
-			})
-			.finally(() => {
-				setLoading(false)
-			})
-	}, [])
+const ListApp = ({ data, text, range, sort, error, loading, darkMode }) => {
+	const title = () => {
+		switch (sort) {
+			case "date":
+				return "Les plus récentes"
+			case "popularity":
+				return "Les plus populaires"
+			case "trending":
+				return "Top 10 trending"
+			default:
+				throw new Error("error: wrong selection")
+		}
+	}
 
 	return (
-		<div>
-			{data.map((el) => {
-				return (
-					<article key={el}>
-						<p>{el.family}</p>
-					</article>
-				)
-			})}
+		<div className="col-lg-9">
+			<article className="row mb-5 ">
+				<h2 className="mb-3">
+					{loading && <p className="text-center fs-4 ">Loading...</p>}
+					{error && <p>{error}</p>}
+					<span
+						className={
+							darkMode ? "badge btn-warning text-dark" : "badge bg-danger"
+						}
+						value={sort}
+					>
+						{title()}
+					</span>
+				</h2>
+				<Card data={data} text={text} range={range} darkMode={darkMode} />
+			</article>
 		</div>
 	)
 }
