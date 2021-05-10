@@ -19,7 +19,6 @@ const FontApp = ({ darkMode }) => {
 
 		fetch(url)
 			.then((response) => {
-				console.log(response)
 				if (!response.ok) {
 					throw new Error(`Invalid url ${response.status}`)
 				}
@@ -27,7 +26,6 @@ const FontApp = ({ darkMode }) => {
 			})
 			.then((data) => {
 				setData(() => data.items.slice(0, 10))
-				console.log(data)
 			})
 			.catch((error) => {
 				setError(error.message)
