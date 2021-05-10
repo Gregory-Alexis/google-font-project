@@ -2,9 +2,7 @@
 
 ## Project
 
-https://hardfork-support.netlify.app/react/project-google-fonts/ \
-
-https://greg-google-font.netlify.app/ 
+https://hardfork-support.netlify.app/react/project-google-fonts/ 
 
 ## Developer API
 
@@ -21,7 +19,7 @@ react-google-font-loader
 
 ## Final rendering of the project
 
-https://yellow-team-google-fonts-widget.netlify.app/
+https://yellowteam-google-font.netlify.app/
 
 # Getting Started with Create React App
 
