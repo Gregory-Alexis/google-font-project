@@ -3,7 +3,7 @@
 ## Project
 
 https://hardfork-support.netlify.app/react/project-google-fonts/ \
-https://greg-google-font.netlify.app/
+https://greg-google-font.netlify.app/ \
 
 ## Developer API
 
