@@ -30,7 +30,7 @@ const Card = ({ data, text, range, darkMode }) => {
 						{text}
 					</p>
 					<a
-						href={`https://fonts.google.com/specimen/${el.family}`}
+						href={`https://fonts.google.com/specimen/${el.family}&display=swap`}
 						rel="noopener noreferrer"
 						target="_blank"
 						className={darkMode ? "text-warning" : "text-danger"}

@@ -12,17 +12,20 @@ const Header = ({ handleDarkMode, darkMode }) => {
 				Les plus récentes, les plus <i>trendy</i> et les plus populaires polices
 				Google.
 			</p>
-			<button
-				type="button"
-				className="btn-dark rounded-circle d-flex ms-auto"
-				onClick={handleDarkMode}
-				data-bs-container="body"
-				data-bs-toggle="popover"
-				data-bs-placement="top"
-				data-bs-content="Top popover"
-			>
-				{darkMode ? "🌞" : "🌙"}
-			</button>
+			<div className="form-check form-switch d-flex justify-content-end">
+				<input
+					className="form-check-input"
+					type="checkbox"
+					id="flexSwitchCheckChecked"
+					onChange={handleDarkMode}
+				/>
+				<label
+					className="form-check-label mx-2"
+					htmlFor="flexSwitchCheckChecked"
+				>
+					{darkMode ? "🌞" : "🌙"}
+				</label>
+			</div>
 		</header>
 	)
 }
