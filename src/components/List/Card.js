@@ -6,7 +6,7 @@ const Card = ({ data, text, range, darkMode }) => {
 		return (
 			<article key={el.family} className="col-lg-6 mb-4">
 				<GoogleFontLoader fonts={[{ font: `${el.family}` }]} />
-				<div className="shadow-sm border p-3 h-100 ">
+				<div className="shadow-sm border p-3 h-100">
 					<h2 className="h6 d-flex aling-items-center justify-content-between">
 						{el.family}
 						<small>{el.variants.length} variant(s)</small>
@@ -22,6 +22,7 @@ const Card = ({ data, text, range, darkMode }) => {
 					</p>
 
 					<p
+						className="sample"
 						style={{
 							fontSize: `${range}px`,
 							fontFamily: `${el.family}`,
