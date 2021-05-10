@@ -23,7 +23,7 @@ const Header = ({ handleDarkMode, darkMode }) => {
 					className="form-check-label mx-2"
 					htmlFor="flexSwitchCheckChecked"
 				>
-					{darkMode ? "🌞" : "🌙"}
+					{darkMode ? "🌙" : "🌞"}
 				</label>
 			</div>
 		</header>

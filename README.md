@@ -1,3 +1,27 @@
+# Google fonts widget
+
+## Project
+
+https://hardfork-support.netlify.app/react/project-google-fonts/
+https://greg-google-font.netlify.app/
+
+## Developer API
+
+https://developers.google.com/fonts/docs/developer_api
+
+## Dependencies
+
+boostrap
+react-google-font-loader
+
+## Outline structure of the project
+
+![p](https://github.com/ChainDot/google-font-project/blob/main/Outline%20Project%20google%20fonts%20widget.png)
+
+## Final rendering of the project
+
+https://yellow-team-google-fonts-widget.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +92,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # google-font-project
