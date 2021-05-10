@@ -13,6 +13,7 @@ const Header = ({ handleDarkMode, darkMode }) => {
 				Google.
 			</p>
 			<div className="form-check form-switch d-flex justify-content-end">
+				<div className=" mx-5">{darkMode ? "" : "🌞"}</div>
 				<input
 					className="form-check-input"
 					type="checkbox"
@@ -23,7 +24,7 @@ const Header = ({ handleDarkMode, darkMode }) => {
 					className="form-check-label mx-2"
 					htmlFor="flexSwitchCheckChecked"
 				>
-					{darkMode ? "🌙" : "🌞"}
+					{darkMode ? "🌙" : ""}
 				</label>
 			</div>
 		</header>
