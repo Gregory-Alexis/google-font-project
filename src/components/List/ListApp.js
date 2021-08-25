@@ -16,9 +16,9 @@ const ListApp = ({ data, text, range, sort, error, loading, darkMode }) => {
 
 	return (
 		<div className="col-lg-9">
-			<article className="row mb-5 ">
+			<article className="row mb-5">
 				<h2 className="mb-3">
-					{loading && <p className="text-center fs-4 ">Loading...</p>}
+					{loading && <p className="text-center fs-4">Loading...</p>}
 					{error && <p>{error}</p>}
 
 					<span
