@@ -4,10 +4,10 @@ const Footer = ({ darkMode }) => {
 			className={
 				darkMode
 					? "text-center bg-warning text-dark p-3 pb-1"
-					: "text-center bg-dark text-white p-3 pb-1"
+					: "text-center bg-dark text-white p-3 pb-1 "
 			}
 		>
-			<p>Site créé par Grégory Alexis</p>
+			<p>Site construit par Grégory Alexis</p>
 		</footer>
 	)
 }
