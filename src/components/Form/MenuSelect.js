@@ -1,8 +1,8 @@
 import React from "react"
 
-const MenuSelect = ({ sort, setSort }) => {
+const MenuSelect = ({ sort, dispatch }) => {
 	const handleChange = (event) => {
-		setSort(event.target.value)
+		dispatch({ type: "SORT", payload: event.target.value })
 	}
 	return (
 		<div>

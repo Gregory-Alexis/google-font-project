@@ -20,6 +20,7 @@ const ListApp = ({ data, text, range, sort, error, loading, darkMode }) => {
 				<h2 className="mb-3">
 					{loading && <p className="text-center fs-4 ">Loading...</p>}
 					{error && <p>{error}</p>}
+
 					<span
 						className={
 							darkMode ? "badge btn-warning text-dark" : "badge bg-danger"

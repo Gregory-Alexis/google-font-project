@@ -1,14 +1,20 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import FontApp from "./components/FontApp"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function App() {
-	const [darkMode, setDarkMode] = useState(false)
+	const [darkMode, setDarkMode] = useState(
+		() => JSON.parse(localStorage.getItem("darkmode")) || []
+	)
 	const handleDarkMode = () => {
 		setDarkMode(!darkMode)
 	}
 	const modeColor = darkMode ? "bg-dark text-white" : "bg-white"
+
+	useEffect(() => {
+		localStorage.setItem("darkmode", JSON.stringify(darkMode))
+	}, [darkMode])
 
 	return (
 		<>

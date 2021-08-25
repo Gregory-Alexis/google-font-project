@@ -1,8 +1,8 @@
 import React from "react"
 
-const InputText = ({ text, setText }) => {
+const InputText = ({ text, dispatch }) => {
 	const handleChange = (e) => {
-		setText(e.target.value)
+		dispatch({ type: "TEXT", payload: e.target.value })
 	}
 	return (
 		<div className="mb-3">

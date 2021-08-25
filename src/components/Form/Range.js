@@ -1,6 +1,6 @@
-const Range = ({ range, setRange }) => {
+const Range = ({ range, dispatch }) => {
 	const handleChange = (e) => {
-		setRange(e.target.value)
+		dispatch({ type: "RANGE", payload: e.target.value })
 	}
 
 	return (

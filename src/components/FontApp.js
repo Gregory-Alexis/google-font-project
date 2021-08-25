@@ -1,38 +1,38 @@
 import React from "react"
 import SelectApp from "./Form/SelectApp"
 import ListApp from "./List/ListApp"
-import { useEffect, useState } from "react"
+import { useEffect, useReducer } from "react"
+import reducer from "./Reducer"
+import axios from "axios"
 
+/* eslint-disable */
 const FontApp = ({ darkMode }) => {
-	const [sort, setSort] = useState("popularity")
+	const [state, dispatch] = useReducer(reducer, {
+		data: [],
+		loading: false,
+		error: "",
+		sort: "popularity",
+		range: 20,
+		text: "Portez ce vieux whisky au juge blond qui fume !? 0123456789",
+	})
+
+	const { data, loading, error, sort, range, text } = state
 	const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=${process.env.REACT_APP_FONT_API}`
-	const [data, setData] = useState([])
-	const [error, setError] = useState("")
-	const [loading, setLoading] = useState(false)
-	const [text, setText] = useState(
-		"Portez ce vieux whisky au juge blond qui fume !? 0123456789"
-	)
-	const [range, setRange] = useState(20)
 
 	useEffect(() => {
-		setLoading(true)
-
-		fetch(url)
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`Invalid url ${response.status}`)
-				}
-				return response.json()
-			})
-			.then((data) => {
-				setData(() => data.items.slice(0, 10))
-			})
-			.catch((error) => {
-				setError(error.message)
-			})
-			.finally(() => {
-				setLoading(false)
-			})
+		const fetchData = async () => {
+			dispatch({ type: "FETCH_INIT" })
+			try {
+				const response = await axios(url)
+				dispatch({
+					type: "FETCH_SUCESS",
+					payload: response,
+				})
+			} catch (error) {
+				dispatch({ type: "FETCH_FAILURE", payload: error.message })
+			}
+		}
+		fetchData()
 	}, [url])
 
 	return (
@@ -41,19 +41,16 @@ const FontApp = ({ darkMode }) => {
 				<SelectApp
 					data={data}
 					sort={sort}
-					setSort={setSort}
+					dispatch={dispatch}
 					text={text}
-					setText={setText}
 					range={range}
-					setRange={setRange}
 				/>
 				<ListApp
 					data={data}
 					sort={sort}
-					setSort={setSort}
+					dispatch={dispatch}
 					text={text}
 					range={range}
-					setRange={setRange}
 					loading={loading}
 					error={error}
 					darkMode={darkMode}
