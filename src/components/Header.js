@@ -3,7 +3,7 @@ const Header = ({ handleDarkMode, darkMode }) => {
 		<header
 			className={
 				darkMode
-					? "bg-warning text-dark text-center p-5 "
+					? "bg-warning text-dark text-center p-5"
 					: "bg-danger text-white text-center p-5"
 			}
 		>
