@@ -23,7 +23,7 @@ const ListApp = ({ data, text, range, sort, error, loading, darkMode }) => {
 
 					<span
 						className={
-							darkMode ? "badge btn-warning text-dark" : "badge bg-danger"
+							darkMode ? "badge btn-warning text-dark " : "badge bg-danger "
 						}
 						value={sort}
 					>

@@ -14,7 +14,7 @@ const Card = ({ data, text, range, darkMode }) => {
 					<p>
 						<small
 							className={
-								darkMode ? "badge bg-warning text-dark" : "badge bg-dark"
+								darkMode ? "badge bg-warning text-dark " : "badge bg-dark"
 							}
 						>
 							{el.category.toUpperCase()}
@@ -34,7 +34,7 @@ const Card = ({ data, text, range, darkMode }) => {
 						href={`https://fonts.google.com/specimen/${el.family}`}
 						rel="noopener noreferrer"
 						target="_blank"
-						className={darkMode ? "text-warning" : "text-danger"}
+						className={darkMode ? "text-warning " : "text-danger"}
 					>
 						Voir sur Google Fonts (ouvre un nouveau tab)
 					</a>
